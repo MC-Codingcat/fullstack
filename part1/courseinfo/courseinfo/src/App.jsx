@@ -17,11 +17,14 @@ const Part = (props) => {
 
 const Content = (props) => {
   console.log(props)
-  return(
+  let arr = props.parts
+  return (
     <div>
-    <Part part={props.parts[0]} />
-    <Part part={props.parts[1]} />
-    <Part part={props.parts[2]} /> 
+      {arr.map((value, index) => (
+        <div key={index}>
+          <Part part={value} />
+        </div>
+      ))}
     </div>
   )
 }
